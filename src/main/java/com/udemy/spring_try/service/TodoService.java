@@ -47,16 +47,9 @@ public class TodoService {
 	public void updateTodo(String id, Todo todo) {
 		for(int i = 0; i < allTodos.size(); i++) {
 			if(allTodos.get(i).getId().equals(id)){
-				todo.setUpdatedAt(dtformat.format(LocalDateTime.now()));
-//				String testCr = todo.getCreatedAt();
-//				String testUp = todo.getUpdatedAt();
-//				System.out.println(testCr);
-//				System.out.println(testUp);
+				String exitCreatedAt = allTodos.get(i).getCreatedAt();
+				todo.setCreatedAt(exitCreatedAt);
 				allTodos.set(i, todo);
-//				String testCr1 = allTodos.get(5).getCreatedAt();
-//				String testUp1 = allTodos.get(5).getUpdatedAt();
-//				System.out.println(testCr1);
-//				System.out.println(testUp1);
 			}
 		}
 	}
